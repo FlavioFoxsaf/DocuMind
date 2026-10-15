@@ -1,0 +1,10 @@
+[server]
+# Limite por arquivo, em MB. O Streamlit recusa arquivos maiores antes de carregá-los na memória.
+maxUploadSize = 10
+# Protótipo local: não servir a rede; só quem está nesta máquina usa o app e os modelos.
+address = "localhost"
+
+[client]
+# Exceções não tratadas não aparecem no navegador: um traceback poderia mostrar trechos
+# dos documentos ou detalhes internos.
+showErrorDetails = "none"

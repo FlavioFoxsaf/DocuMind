@@ -1,0 +1,25 @@
+# Ambiente e credenciais
+.venv/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Cache do Python, testes e ferramentas
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ruff_cache/
+
+# Editores
+.vscode/
+.idea/
+
+# Documentos privados nunca vao para o repositorio.
+# Apenas as amostras ficticias geradas por script sao versionadas.
+*.pdf
+!docs/amostras/*.pdf
+privado/
+*.log

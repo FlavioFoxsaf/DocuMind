@@ -1,0 +1,258 @@
+{
+  "descricao": "Matriz difícil do DocuMind (criada em 27/09/2026 para comparar configurações priorizando precisão, depois que a matriz principal chegou a 100%). Armadilhas de horário/idade, contas que exigem juntar dois fatos, negações e perguntas sem resposta que parecem ter resposta. Fatos conferidos no texto extraído das amostras fictícias; páginas em base 1. Termos-chave de contas (H6, H7, H13) não aparecem literalmente no PDF: o aviso de 'termo não encontrado na página' é esperado. Em termos_chave, '|' separa alternativas.",
+  "documentos": [
+    "docs/amostras/regulamento_condominio.pdf",
+    "docs/amostras/ata_assembleia_2026.pdf"
+  ],
+  "perguntas": [
+    {
+      "id": "H1",
+      "pergunta": "Posso usar a churrasqueira até meia-noite numa sexta-feira?",
+      "anterior": null,
+      "tipo": "armadilha",
+      "resposta_esperada": "Não: o uso da churrasqueira deve terminar até as 22h (a exceção até 1h vale só para o salão de festas).",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 3
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "22h"
+      ]
+    },
+    {
+      "id": "H2",
+      "pergunta": "Uma criança de 11 anos pode usar a piscina sozinha?",
+      "anterior": null,
+      "tipo": "armadilha",
+      "resposta_esperada": "Não: menores de 12 anos só usam a piscina acompanhados de um adulto responsável.",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 3
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "12 anos"
+      ]
+    },
+    {
+      "id": "H3",
+      "pergunta": "Com quantos dias de antecedência preciso avisar a portaria sobre uma mudança?",
+      "anterior": null,
+      "tipo": "armadilha",
+      "resposta_esperada": "48 horas (2 dias) de antecedência.",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 5
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "48"
+      ]
+    },
+    {
+      "id": "H4",
+      "pergunta": "Preciso receber uma advertência antes de levar multa por pagar a taxa condominial atrasada?",
+      "anterior": null,
+      "tipo": "negacao",
+      "resposta_esperada": "Não: a multa por atraso (2% + juros de 1% ao mês) não depende de advertência.",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 6
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "não depende|nao depende|não é necess|nao e necess|não precisa|nao precisa|sem advertência|sem advertencia"
+      ]
+    },
+    {
+      "id": "H5",
+      "pergunta": "Posso levar meu cachorro para a academia do condomínio?",
+      "anterior": null,
+      "tipo": "negacao",
+      "resposta_esperada": "Não: é proibida a permanência de animais na piscina e na academia.",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 4
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "proibid|não pode|nao pode"
+      ]
+    },
+    {
+      "id": "H6",
+      "pergunta": "Qual é o valor de cada parcela da reforma da piscina?",
+      "anterior": null,
+      "tipo": "conta",
+      "resposta_esperada": "R$ 7.000,00 (R$ 42.000,00 em 6 parcelas mensais).",
+      "evidencias": [
+        {
+          "arquivo": "ata_assembleia_2026.pdf",
+          "pagina": 2
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "7.000|7000|sete mil"
+      ]
+    },
+    {
+      "id": "H7",
+      "pergunta": "Quantas unidades não estavam presentes na assembleia de 2026?",
+      "anterior": null,
+      "tipo": "conta",
+      "resposta_esperada": "17 unidades (31 presentes de 48).",
+      "evidencias": [
+        {
+          "arquivo": "ata_assembleia_2026.pdf",
+          "pagina": 1
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "17"
+      ]
+    },
+    {
+      "id": "H8",
+      "pergunta": "Posso fazer uma obra barulhenta no sábado às 14h?",
+      "anterior": null,
+      "tipo": "armadilha",
+      "resposta_esperada": "Não: aos sábados, obras com ruído só das 9h às 13h.",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 2
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "13h"
+      ]
+    },
+    {
+      "id": "H9",
+      "pergunta": "Qual é o valor da taxa de mudança cobrada pelo condomínio?",
+      "anterior": null,
+      "tipo": "sem_resposta_plausivel",
+      "resposta_esperada": "Recusa: os documentos tratam de horários e aviso de mudança, mas não de taxa de mudança.",
+      "evidencias": [],
+      "deve_recusar": true,
+      "termos_chave": []
+    },
+    {
+      "id": "H10",
+      "pergunta": "Quem é o zelador do condomínio?",
+      "anterior": null,
+      "tipo": "sem_resposta",
+      "resposta_esperada": "Recusa: não há zelador citado.",
+      "evidencias": [],
+      "deve_recusar": true,
+      "termos_chave": []
+    },
+    {
+      "id": "H11",
+      "pergunta": "Quantos animais de estimação cada apartamento pode ter?",
+      "anterior": null,
+      "tipo": "sem_resposta_plausivel",
+      "resposta_esperada": "Recusa: o regulamento trata de circulação de animais, mas não de quantidade por unidade.",
+      "evidencias": [],
+      "deve_recusar": true,
+      "termos_chave": []
+    },
+    {
+      "id": "H12",
+      "pergunta": "Qual era o valor da taxa condominial em 2024?",
+      "anterior": null,
+      "tipo": "sem_resposta_plausivel",
+      "resposta_esperada": "Recusa: a ata informa R$ 620,00 antes do reajuste de maio de 2026, sem dizer o valor de 2024.",
+      "evidencias": [],
+      "deve_recusar": true,
+      "termos_chave": []
+    },
+    {
+      "id": "H13",
+      "pergunta": "Se eu danificar de propósito a quadra em junho de 2026, qual é o valor da multa?",
+      "anterior": null,
+      "tipo": "conta_combina_arquivos",
+      "resposta_esperada": "3 taxas condominiais = R$ 2.040,00 (3 × R$ 680,00), além do custo do conserto. Aceitável também '3 × R$ 680,00' sem a conta; o termo exige o valor final.",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 6
+        },
+        {
+          "arquivo": "ata_assembleia_2026.pdf",
+          "pagina": 1
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "2.040|2040"
+      ]
+    },
+    {
+      "id": "H14",
+      "pergunta": "Quem representa o Bloco B no conselho fiscal?",
+      "anterior": null,
+      "tipo": "direta",
+      "resposta_esperada": "Renata Lima.",
+      "evidencias": [
+        {
+          "arquivo": "ata_assembleia_2026.pdf",
+          "pagina": 2
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "Renata Lima"
+      ]
+    },
+    {
+      "id": "H15",
+      "pergunta": "A síndica atual pode cumprir três mandatos seguidos?",
+      "anterior": null,
+      "tipo": "negacao",
+      "resposta_esperada": "Não: o mandato é de 2 anos, com uma única reeleição permitida (no máximo dois mandatos seguidos).",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 1
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "não|nao"
+      ]
+    },
+    {
+      "id": "H16",
+      "pergunta": "Até que horas posso fazer uma festa no salão numa terça-feira, e qual regra vale para o som depois das 22h?",
+      "anterior": null,
+      "tipo": "combina_trechos",
+      "resposta_esperada": "Até 1h da manhã; a partir das 22h o som deve ficar em volume baixo (exceção ao horário de silêncio).",
+      "evidencias": [
+        {
+          "arquivo": "regulamento_condominio.pdf",
+          "pagina": 3
+        }
+      ],
+      "deve_recusar": false,
+      "termos_chave": [
+        "1h",
+        "baixo"
+      ]
+    }
+  ]
+}

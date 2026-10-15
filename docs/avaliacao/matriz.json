@@ -1,0 +1,180 @@
+{
+  "descricao": "Matriz de perguntas da T07 (DocuMind). Fatos e páginas conferidos em 27/09/2026 no texto extraído por src.loader (pypdf 6.19.0) das amostras fictícias. Páginas em base 1. Em termos_chave, '|' separa alternativas aceitas; a comparação ignora maiúsculas, acentos, espaços e ',00'.",
+  "documentos": [
+    "docs/amostras/regulamento_condominio.pdf",
+    "docs/amostras/ata_assembleia_2026.pdf"
+  ],
+  "perguntas": [
+    {
+      "id": "D1",
+      "pergunta": "Quantas unidades residenciais tem o condomínio?",
+      "anterior": null,
+      "tipo": "direta",
+      "resposta_esperada": "48 unidades, em 3 blocos (A, B e C), 16 por bloco.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 1}],
+      "deve_recusar": false,
+      "termos_chave": ["48"]
+    },
+    {
+      "id": "D2",
+      "pergunta": "Qual é o horário permitido para obras com ruído aos sábados?",
+      "anterior": null,
+      "tipo": "direta",
+      "resposta_esperada": "Das 9h às 13h.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 2}],
+      "deve_recusar": false,
+      "termos_chave": ["9h|9 horas|9:00", "13h|13 horas|13:00"]
+    },
+    {
+      "id": "D3",
+      "pergunta": "Qual é a taxa de reserva da churrasqueira?",
+      "anterior": null,
+      "tipo": "direta",
+      "resposta_esperada": "R$ 80,00 (o salão de festas, R$ 150,00, é distrator na mesma página).",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 3}],
+      "deve_recusar": false,
+      "termos_chave": ["R$ 80,00"]
+    },
+    {
+      "id": "D4",
+      "pergunta": "Quantas vagas de garagem cada unidade tem?",
+      "anterior": null,
+      "tipo": "direta",
+      "resposta_esperada": "1 vaga por unidade; é proibido alugá-la a quem não mora no condomínio.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 4}],
+      "deve_recusar": false,
+      "termos_chave": ["1 vaga|uma vaga|uma única vaga|uma (1) vaga"]
+    },
+    {
+      "id": "D5",
+      "pergunta": "Qual é o prazo para recorrer de uma multa?",
+      "anterior": null,
+      "tipo": "direta",
+      "resposta_esperada": "15 dias contados do recebimento da notificação, com recurso à assembleia.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 6}],
+      "deve_recusar": false,
+      "termos_chave": ["15 dias|quinze dias"]
+    },
+    {
+      "id": "P1",
+      "pergunta": "Até que horas posso reformar o apartamento num sábado?",
+      "anterior": null,
+      "tipo": "parafrase",
+      "parafrase_de": "D2",
+      "resposta_esperada": "Até as 13h (obras com ruído aos sábados das 9h às 13h).",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 2}],
+      "deve_recusar": false,
+      "termos_chave": ["13h|13 horas|13:00"]
+    },
+    {
+      "id": "P2",
+      "pergunta": "Quanto custa reservar o espaço do churrasco?",
+      "anterior": null,
+      "tipo": "parafrase",
+      "parafrase_de": "D3",
+      "resposta_esperada": "R$ 80,00.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 3}],
+      "deve_recusar": false,
+      "termos_chave": ["R$ 80,00"]
+    },
+    {
+      "id": "C1",
+      "pergunta": "Qual é o valor da multa na primeira reincidência cometida depois de maio de 2026?",
+      "anterior": null,
+      "tipo": "combina_arquivos",
+      "resposta_esperada": "1 taxa condominial mensal vigente, que passa a ser R$ 680,00 a partir de maio de 2026.",
+      "evidencias": [
+        {"arquivo": "regulamento_condominio.pdf", "pagina": 6},
+        {"arquivo": "ata_assembleia_2026.pdf", "pagina": 1}
+      ],
+      "deve_recusar": false,
+      "termos_chave": ["R$ 680,00"]
+    },
+    {
+      "id": "C2",
+      "pergunta": "A piscina vai abrir numa terça-feira de junho de 2026?",
+      "anterior": null,
+      "tipo": "combina_arquivos",
+      "resposta_esperada": "Não: embora funcione de terça a domingo, ficará fechada de 1º a 30 de junho de 2026 para reforma.",
+      "evidencias": [
+        {"arquivo": "ata_assembleia_2026.pdf", "pagina": 2},
+        {"arquivo": "regulamento_condominio.pdf", "pagina": 3}
+      ],
+      "deve_recusar": false,
+      "termos_chave": ["fechada|fechará|não abre|não vai abrir|não abrirá", "reforma"]
+    },
+    {
+      "id": "C3",
+      "pergunta": "Posso fazer uma festa no salão até 1h da manhã numa quarta-feira?",
+      "anterior": null,
+      "tipo": "combina_trechos",
+      "resposta_esperada": "Sim: eventos no salão podem ir até 1h e são exceção ao silêncio das 22h (Art. 4º), desde que o som fique baixo a partir das 22h.",
+      "evidencias": [
+        {"arquivo": "regulamento_condominio.pdf", "pagina": 3},
+        {"arquivo": "regulamento_condominio.pdf", "pagina": 2}
+      ],
+      "deve_recusar": false,
+      "termos_chave": ["1h|1 hora|uma hora|01:00", "volume baixo|som baixo|baixo"]
+    },
+    {
+      "id": "F1",
+      "pergunta": "Qual o horário da piscina?",
+      "anterior": null,
+      "tipo": "acompanhamento_base",
+      "resposta_esperada": "De terça a domingo, das 8h às 21h (fechada às segundas para limpeza).",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 3}],
+      "deve_recusar": false,
+      "termos_chave": ["8h|8 horas|8:00", "21h|21 horas|21:00"]
+    },
+    {
+      "id": "F2",
+      "pergunta": "E às segundas?",
+      "anterior": "Qual o horário da piscina?",
+      "tipo": "acompanhamento",
+      "resposta_esperada": "Às segundas-feiras a piscina fica fechada para limpeza.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 3}],
+      "deve_recusar": false,
+      "termos_chave": ["fechada|fecha|não funciona|não abre", "limpeza"]
+    },
+    {
+      "id": "S1",
+      "pergunta": "Qual é o CNPJ do condomínio?",
+      "anterior": null,
+      "tipo": "sem_resposta",
+      "resposta_esperada": "Recusa: o CNPJ não consta dos documentos.",
+      "evidencias": [],
+      "deve_recusar": true,
+      "termos_chave": []
+    },
+    {
+      "id": "S2",
+      "pergunta": "Qual é o valor do IPTU das unidades?",
+      "anterior": null,
+      "tipo": "sem_resposta",
+      "resposta_esperada": "Recusa: o IPTU não consta dos documentos (a taxa condominial de R$ 680,00 é distrator, não é IPTU).",
+      "evidencias": [],
+      "deve_recusar": true,
+      "termos_chave": []
+    },
+    {
+      "id": "A1",
+      "pergunta": "Qual é o valor da multa?",
+      "anterior": null,
+      "tipo": "ambigua",
+      "resposta_esperada": "Depende do caso: reincidência = 1 taxa condominial (2 taxas em nova reincidência em 12 meses); dano intencional = conserto + 3 taxas; atraso da taxa = 2% + juros de 1% ao mês. A resposta precisa dizer qual caso é qual.",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 6}],
+      "deve_recusar": false,
+      "termos_chave": ["reincidência", "2%"]
+    },
+    {
+      "id": "I1",
+      "pergunta": "Qual é o horário de silêncio nas noites de sexta-feira?",
+      "anterior": "Qual é a taxa de reserva da churrasqueira?",
+      "tipo": "independente_apos_outra",
+      "resposta_esperada": "Das 23h às 8h (domingo a quinta é das 22h às 7h).",
+      "evidencias": [{"arquivo": "regulamento_condominio.pdf", "pagina": 2}],
+      "deve_recusar": false,
+      "termos_chave": ["23h|23 horas|23:00", "8h|8 horas|8:00"]
+    }
+  ]
+}
